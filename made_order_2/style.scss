@@ -1,0 +1,490 @@
+@import
+'../mixins.scss';
+*{
+  @include mp_0;
+}
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+}
+.gray_button{
+  width: 20%;
+  height: 30%;
+  border: none;
+  color: gray;
+  background: rgba(203, 203, 203, 1);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+}
+a{
+  @include black_classic_a;
+  font-size: 2rem;
+}
+h2{
+  font:{
+    size: 2.8rem;
+    weight: 500;
+  }
+}
+p{
+  color: gray;
+  letter-spacing: 0.08rem;
+  font:{
+    size: 1.8rem;
+    weight: 300;
+  }
+}
+.section_1_active{
+  border: 1px solid green;
+  color: green;
+}
+button{
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.display_none{
+  visibility: hidden;
+}
+.standart_button{
+  width: 20%;
+  height: 30%;
+  border: 1px solid green;
+  color: green;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: green;
+    color: white;
+  }
+}
+header{
+  @include fixed;
+  background: white;
+  width: 100vw;
+  height: 8vh;
+  @include flex-center;
+
+  nav{
+    width: 70%;
+    height: 100%;
+    @include flex-between;
+
+    img{
+      cursor: pointer;
+    }
+    .nav_menu{
+      width: 40%;
+      height: 100%;
+      @include flex-between;
+    }
+    .nav_button{
+      width: 30%;
+      height: 100%;
+      @include flex-between;
+
+      button{
+        border: none;
+        @include flex-center;
+        background: transparent;
+      }
+      .profile{
+        width: 17%;
+      }
+    }
+  }
+}
+main{
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 90vh;
+  @include flex-center;
+
+  .section_1{
+    @include flex-between-column;
+    width: 70%;
+    height: 100%;
+
+    .middle_block{
+      width: 100%;
+      height: 90%;
+      @include flex-between;
+
+      .progress{
+        width: 100%;
+        height: 10%;
+        @include flex-between;
+      }
+      .main_block{
+        width: 50%;
+        height: 80%;
+        @include flex-between-column;
+        align-items: start;
+
+        input{
+          width: 100%;
+          height: 12%;
+          @include b_border;
+          font-size: 2rem;
+
+          &::placeholder{
+            position: relative;
+            left: 5%;
+          }
+        }
+        .input_block{
+          width: 100%;
+          height: 20%;
+          @include flex-between;
+
+          div{
+            width: 50%;
+            height: 70%;
+            @include flex-between-column;
+            align-items: start;
+
+            input{
+              width: 100%;
+              height: 50%;
+            }
+          }
+        }
+        .input{
+          width: 50%;
+          height: 10%;
+          @include flex-between-column;
+          align-items: start;
+
+          input{
+            width: 100%;
+            height: 50%;
+          }
+        }
+        .time{
+          width: 70%;
+          height: 15%;
+          @include flex-between-column;
+          align-items: start;
+        }
+        .teg_block{
+          width: 100%;
+          height: 15%;
+          @include grid(4, 2, 2%);
+
+          button{
+            border: none;
+            border-radius: 4rem;
+            background-color: #e1e1e1;
+          }
+        }
+      }
+    }
+    .button_block{
+      width: 100%;
+      height: 20%;
+      @include flex-between;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
+
+  header {
+    nav {
+      width: 80%;
+
+      img{
+        width: 80%;
+      }
+      .nav_menu {
+        width: 50%;
+      }
+
+      .nav_button {
+        width: 30%;
+
+        .profile {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  main {
+    img{
+      width: 100%;
+    }
+    .section_1 {
+      width: 80%;
+
+      .middle_block {
+        width: 100%;
+
+        .main_block {
+          width: 55%;
+
+          input {
+            font-size: 1.8rem;
+          }
+
+          .input_block {
+            width: 100%;
+
+            div {
+              width: 50%;
+            }
+          }
+
+          .teg_block {
+            width: 100%;
+          }
+
+          .input {
+            width: 55%;
+          }
+
+          .time {
+            width: 75%;
+          }
+        }
+      }
+    }
+
+    .button_block {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+
+  header {
+    nav {
+      width: 90%;
+
+      .nav_menu {
+        width: 60%;
+
+        a {
+          font-size: 1.8rem;
+        }
+      }
+
+      .nav_button {
+        width: 40%;
+
+        .profile {
+          width: 25%;
+        }
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 90%;
+
+      .middle_block {
+        width: 100%;
+
+        .main_block {
+          width: 60%;
+
+          input {
+            font-size: 1.6rem;
+          }
+
+          .input_block {
+            width: 100%;
+
+            div {
+              width: 50%;
+            }
+          }
+
+          .teg_block {
+            width: 100%;
+          }
+
+          .input {
+            width: 60%;
+          }
+
+          .time {
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .button_block {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 6px;
+  }
+
+  header {
+    nav {
+      width: 95%;
+
+      .nav_menu {
+        width: 70%;
+        display: none;
+
+        a {
+          font-size: 1.6rem;
+        }
+      }
+
+      .nav_button {
+        width: 50%;
+
+        button {
+          display: none;
+        }
+
+        .profile {
+          width: 30%;
+        }
+
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 95%;
+
+      .middle_block {
+        width: 100%;
+
+        .main_block {
+          width: 70%;
+
+          input {
+            font-size: 1.4rem;
+          }
+
+          .input_block {
+            width: 100%;
+
+            div {
+              width: 50%;
+            }
+          }
+
+          .teg_block {
+            width: 100%;
+          }
+
+          .input {
+            width: 70%;
+          }
+
+          .time {
+            width: 85%;
+          }
+        }
+      }
+    }
+
+    .button_block {
+      width: 95%;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 5px;
+  }
+
+  header {
+    nav {
+      width: 95%;
+
+      .nav_menu {
+        width: 80%;
+
+        a {
+          font-size: 1.4rem;
+        }
+      }
+
+      .nav_button {
+        width: 60%;
+
+        .profile {
+          width: 35%;
+        }
+
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 95%;
+
+      .middle_block {
+        width: 100%;
+
+        .main_block {
+          width: 80%;
+
+          input {
+            font-size: 1.2rem;
+          }
+
+          .input_block {
+            width: 100%;
+
+            div {
+              width: 50%;
+            }
+          }
+
+          .teg_block {
+            width: 100%;
+          }
+
+          .input {
+            width: 80%;
+          }
+
+          .time {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    .button_block {
+      width: 95%;
+    }
+  }
+}

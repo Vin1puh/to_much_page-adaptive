@@ -1,0 +1,662 @@
+@import
+'../mixins.scss';
+*{
+  @include mp_0;
+}
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+}
+a{
+  @include black_classic_a;
+  font-size: 2rem;
+}
+h2{
+  font:{
+    size: 2.8rem;
+    weight: 500;
+  }
+}
+p{
+  color: gray;
+  letter-spacing: 0.08rem;
+  font:{
+    size: 1.8rem;
+    weight: 300;
+  }
+}
+.show{
+  display: flex !important;
+}
+.hide{
+  display: none !important;
+}
+.green_span{
+  font-size: 2.5rem;
+  color: green;
+}
+.section_1_active{
+  border: 1px solid green;
+  color: green;
+}
+button{
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.display_none{
+  visibility: hidden;
+}
+.standart_button{
+  width: 100%;
+  height: 15%;
+  border: 1px solid green;
+  color: green;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: green;
+    color: white;
+  }
+}
+header{
+  @include fixed;
+  background: white;
+  width: 100vw;
+  height: 8vh;
+  @include flex-center;
+
+  nav{
+    width: 70%;
+    height: 100%;
+    @include flex-between;
+
+    img{
+      cursor: pointer;
+    }
+    .nav_menu{
+      width: 40%;
+      height: 100%;
+      @include flex-between;
+    }
+    .nav_button{
+      width: 30%;
+      height: 100%;
+      @include flex-between;
+
+      button{
+        border: none;
+        @include flex-center;
+        background: transparent;
+      }
+      .profile{
+        width: 17%;
+      }
+    }
+  }
+}
+main{
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  @include flex-between-column;
+
+  .section_1{
+    width: 70%;
+    height: 65vh;
+    @include flex-between;
+    align-items: start;
+
+    .s_1_text{
+      width: 55%;
+      height: 100%;
+      @include b_border;
+      border-radius: 3rem;
+      @include flex-between-column;
+      align-items: start;
+
+      h2{
+        position: relative;
+        left: 2.5%;
+        width: 90%;
+      }
+      &__top{
+        width: 100%;
+        height: 12%;
+        @include flex-around;
+
+        h1{
+          font-size: 3.5rem;
+          width: 50%;
+        }
+        .value{
+          width: 40%;
+          height: 90%;
+          @include flex-between-column;
+          align-items: end;
+        }
+      }
+      &__teg{
+        width: 60%;
+        height: 3%;
+        @include flex-evenly;
+      }
+      &__file{
+        position: relative;
+        left: 2.5%;
+        width: 40%;
+        height: 20%;
+        @include flex-between-column;
+        align-items: start;
+
+        .document{
+          width: 100%;
+          height: 30%;
+          @include flex-between;
+
+          img{
+            width: 12%;
+          }
+          h2{
+            font-size: 2.2rem;
+            font-weight: 400;
+          }
+        }
+      }
+      &__bottom{
+        position: relative;
+        left: 2.5%;
+        width: 95%;
+        height: 8%;
+        @include flex-between;
+
+        .standart_button{
+          width: 30%;
+          height: 90%;
+        }
+      }
+    }
+    .s_1_profile{
+      width: 40%;
+      height: 30%;
+      @include b_border;
+      border-radius: 2rem;
+      @include flex-around;
+
+      .text{
+        width: 70%;
+        height: 90%;
+        @include flex-evenly-column;
+        align-items: start;
+
+        .stars{
+          width: 70%;
+          height: 30%;
+          @include flex-between;
+
+          &__star_block{
+            width: 60%;
+            @include flex-between;
+          }
+        }
+      }
+      img{
+        width: 25%;
+      }
+    }
+  }
+  .section_2{
+    width: 70%;
+    height: 65vh;
+    @include flex-between;
+    display: none;
+
+    .s_2_text {
+      width: 55%;
+      height: 95%;
+      @include b_border;
+      border-radius: 3rem;
+      @include flex-around-column;
+      align-items: start;
+
+      h1{
+        position: relative;
+        left: 2.5%;
+        font-size: 3.5rem;
+        width: 90%;
+        text-align: start;
+      }
+      .standart_button{
+        width: 28%;
+        height: 7%;
+        position: relative;
+        left: 2.5%;
+      }
+      .input_block{
+        position: relative;
+        left: 2.5%;
+        width: 70%;
+        height: 15%;
+        @include flex-between-column;
+        align-items: start;
+
+        input{
+          width: 100%;
+          height: 50%;
+          @include b_border;
+
+          &::placeholder{
+            position: relative;
+            left: 5%;
+          }
+        }
+      }
+    }
+    .display_none{
+      width: 40%;
+    }
+  }
+}
+footer{
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  height: 35vh;
+  @include flex-center;
+
+  section{
+    width: 70%;
+    height: 90%;
+    @include flex-between-column;
+
+    div{
+      &:first-child{
+        width: 100%;
+        height: 60%;
+        @include flex-between;
+        align-items: start;
+
+        h2{
+          font-size: 3.5rem;
+        }
+        .s_5_block{
+          width: 15%;
+          height: 100%;
+          @include flex-between-column;
+          justify-content: start;
+          align-items: start;
+
+          p{
+            cursor: pointer;
+            line-height: 200%;
+
+            &:first-child{
+              line-height: 300%;
+            }
+          }
+        }
+        .web{
+          width: 20%;
+          height: 60%;
+          @include flex-between-column;
+          align-items: start;
+
+          .list{
+            width: 100%;
+            height: 50%;
+            @include flex-between;
+
+            img{
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover{
+                mask-image: linear-gradient(rgba(0, 128, 0, 1), rgba(0, 128, 0, 1));
+              }
+            }
+          }
+        }
+      }
+      &:last-child{
+        width: 60%;
+        height: 20%;
+        @include flex-center;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px;
+  }
+
+  header {
+    nav {
+      width: 80%;
+
+      img{
+        width: 80%;
+      }
+      .nav_menu {
+        width: 50%;
+      }
+
+      .nav_button {
+        width: 30%;
+
+        .profile {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 80%;
+
+      .s_1_text {
+        width: 55%;
+
+        &__top {
+          h1 {
+            font-size: 3rem;
+          }
+        }
+
+        &__file {
+          width: 50%;
+        }
+      }
+
+      .s_1_profile {
+        width: 40%;
+      }
+    }
+
+    .section_2 {
+      width: 80%;
+
+      .s_2_text {
+        width: 55%;
+      }
+    }
+  }
+
+  footer {
+    section {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+
+  header {
+    nav {
+      width: 90%;
+
+      .nav_menu {
+        width: 60%;
+
+        a {
+          font-size: 1.8rem;
+        }
+      }
+
+      .nav_button {
+        width: 40%;
+
+        .profile {
+          width: 25%;
+        }
+
+        img {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 90%;
+
+      .s_1_text {
+        width: 60%;
+
+        &__top {
+          h1 {
+            font-size: 2.8rem;
+          }
+        }
+
+        &__file {
+          width: 60%;
+        }
+      }
+
+      .s_1_profile {
+        width: 35%;
+      }
+    }
+
+    .section_2 {
+      width: 90%;
+
+      .s_2_text {
+        width: 60%;
+      }
+    }
+  }
+
+  footer {
+    section {
+      width: 90%;
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 20%;
+          }
+
+          .web {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 6px;
+  }
+
+  header {
+    nav {
+      width: 95%;
+
+      .nav_menu {
+        width: 70%;
+        display: none;
+
+        a {
+          font-size: 1.6rem;
+        }
+      }
+
+      .nav_button {
+        width: 50%;
+
+        button {
+          display: none;
+        }
+
+        .profile {
+          width: 30%;
+        }
+
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 95%;
+      @include flex-between-column;
+
+      .s_1_text {
+        width: 100%;
+
+        &__top {
+          h1 {
+            font-size: 2.5rem;
+          }
+        }
+
+        &__file {
+          width: 80%;
+        }
+      }
+
+      .s_1_profile {
+        width: 100%;
+        height: 20%;
+      }
+    }
+
+    .section_2 {
+      width: 95%;
+
+      .s_2_text {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    section {
+      width: 95%;
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 25%;
+          }
+
+          .web {
+            width: 30%;
+
+            .list {
+              img {
+                width: 25%;
+              }
+            }
+          }
+        }
+
+        &:last-child {
+          width: 80%;
+        }
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 5px;
+  }
+
+  header {
+    nav {
+      width: 95%;
+
+      .nav_menu {
+        width: 80%;
+
+        a {
+          font-size: 1.4rem;
+        }
+      }
+
+      .nav_button {
+        width: 60%;
+
+        .profile {
+          width: 35%;
+        }
+
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  main {
+    .section_1 {
+      width: 95%;
+
+      .s_1_text {
+        &__top {
+          h1 {
+            font-size: 2.2rem;
+          }
+        }
+
+        &__file {
+          width: 90%;
+        }
+      }
+
+      .s_1_profile {
+        width: 100%;
+      }
+    }
+
+    .section_2 {
+      width: 95%;
+
+      .s_2_text {
+        width: 100%;
+      }
+    }
+  }
+
+  footer {
+    section {
+      width: 100%;
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 30%;
+          }
+
+          .web {
+            width: 35%;
+          }
+        }
+
+        &:last-child {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

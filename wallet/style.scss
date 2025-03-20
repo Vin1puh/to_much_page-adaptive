@@ -1,0 +1,593 @@
+@import
+'../mixins.scss';
+*{
+  @include mp_0;
+}
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+}
+a{
+  @include black_classic_a;
+  font-size: 2rem;
+}
+h2{
+  font:{
+    size: 2.8rem;
+    weight: 500;
+  }
+}
+p{
+  color: gray;
+  letter-spacing: 0.08rem;
+  font:{
+    size: 1.8rem;
+    weight: 300;
+  }
+}
+.section_1_active{
+  border: 1px solid green;
+  color: green;
+}
+button{
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.display_none{
+  visibility: hidden;
+}
+.standart_button{
+  width: 100%;
+  height: 15%;
+  border: 1px solid green;
+  color: green;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: green;
+    color: white;
+  }
+}
+.green{
+  color: green;
+  font-size: 3rem;
+}
+header{
+  @include fixed;
+  background: white;
+  width: 100vw;
+  height: 8vh;
+  @include flex-center;
+
+  nav{
+    width: 70%;
+    height: 100%;
+    @include flex-between;
+
+    img{
+      cursor: pointer;
+    }
+    .nav_menu{
+      width: 40%;
+      height: 100%;
+      @include flex-between;
+    }
+    .nav_button{
+      width: 30%;
+      height: 100%;
+      @include flex-between;
+
+      button{
+        border: none;
+        @include flex-center;
+        background: transparent;
+      }
+      .profile{
+        width: 17%;
+      }
+    }
+  }
+}
+main{
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 100vh;
+  @include flex-center;
+
+  section{
+    width: 70%;
+    height: 100%;
+    @include flex-between-column;
+
+    h2{
+      span{
+        @include orange_span(3rem);
+      }
+    }
+    .value{
+      width: 100%;
+      height: 35%;
+      @include flex-between;
+
+      &__left{
+        width: 45%;
+        height: 100%;
+        @include grid(2, 2, 5%);
+
+        div{
+          width: 100%;
+          height: 100%;
+          @include flex-evenly-column;
+          @include b_border;
+          border-radius: 3rem;
+
+          p{
+            font-size: 2rem;
+          }
+          h2{
+            font-size: 3rem;
+          }
+        }
+      }
+      &__right{
+        width: 50%;
+        height: 100%;
+        @include flex-around-column;
+        @include b_border;
+        border-radius: 3rem;
+
+        .wallet{
+          width: 100%;
+          height: 40%;
+          @include grid(3, 1, 5%);
+
+          div{
+            width: 100%;
+            height: 70%;
+            @include b_border;
+            border-radius: 3rem;
+            @include flex-center;
+
+            img{
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+    .history{
+      width: 100%;
+      height: 50%;
+      @include flex-between-column;
+
+      .name{
+        width: 100%;
+        height: 10%;
+        @include flex-center;
+        justify-content: start;
+      }
+      .operation{
+        width: 100%;
+        height: 80%;
+        @include flex-between-column;
+
+        .line{
+          width: 100%;
+          height: 25%;
+          @include flex-between;
+
+          img{
+            width: 5%;
+          }
+          p{
+            font-size: 2.2rem;
+            color: black;
+            @include flex-center;
+            justify-content: start;
+
+            &:first-child{
+              width: 15%;
+            }
+            &:nth-child(2){
+              width: 15%;
+            }
+            &:nth-child(3){
+              width: 20%;
+            }
+            &:last-child{
+              width: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+footer{
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  height: 35vh;
+  @include flex-center;
+
+  section{
+    width: 70%;
+    height: 90%;
+    @include flex-between-column;
+
+    div{
+      &:first-child{
+        width: 100%;
+        height: 60%;
+        @include flex-between;
+        align-items: start;
+
+        h2{
+          font-size: 3.5rem;
+        }
+        .s_5_block{
+          width: 15%;
+          height: 100%;
+          @include flex-between-column;
+          justify-content: start;
+          align-items: start;
+
+          p{
+            cursor: pointer;
+            line-height: 200%;
+
+            &:first-child{
+              line-height: 300%;
+            }
+          }
+        }
+        .web{
+          width: 20%;
+          height: 60%;
+          @include flex-between-column;
+          align-items: start;
+
+          .list{
+            width: 100%;
+            height: 50%;
+            @include flex-between;
+
+            img{
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover{
+                mask-image: linear-gradient(rgba(0, 128, 0, 1), rgba(0, 128, 0, 1));
+              }
+            }
+          }
+        }
+      }
+      &:last-child{
+        width: 60%;
+        height: 20%;
+        @include flex-center;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 8px; // Уменьшаем базовый размер шрифта
+  }
+
+  header {
+    height: 7vh; // Уменьшаем высоту хедера
+
+    nav {
+      width: 80%; // Увеличиваем ширину навигации
+
+      img{
+        width: 80%;
+      }
+      .nav_menu {
+        width: 50%; // Уменьшаем ширину меню
+      }
+
+      .nav_button {
+        width: 35%; // Уменьшаем ширину кнопок
+
+        .profile {
+          width: 20%; // Уменьшаем ширину профиля
+        }
+      }
+    }
+  }
+
+  main {
+    top: 8vh; // Уменьшаем отступ сверху
+
+    section {
+      width: 80%; // Уменьшаем ширину секции
+
+      .value {
+        height: 40%; // Увеличиваем высоту блока value
+
+        &__left {
+          width: 50%; // Увеличиваем ширину левой части
+        }
+
+        &__right {
+          width: 45%; // Уменьшаем ширину правой части
+        }
+      }
+
+      .history {
+        height: 55%; // Увеличиваем высоту блока истории
+
+        .operation {
+          .line {
+            p {
+              font-size: 2rem; // Уменьшаем размер шрифта
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 30vh; // Уменьшаем высоту футера
+
+    section {
+      width: 80%; // Уменьшаем ширину секции футера
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 20%; // Увеличиваем ширину блоков
+          }
+
+          .web {
+            width: 25%; // Увеличиваем ширину блока с иконками
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 7px; // Уменьшаем базовый размер шрифта
+  }
+
+  header {
+    height: 6vh; // Уменьшаем высоту хедера
+
+    nav {
+      .nav_menu {
+        display: none; // Скрываем меню навигации
+      }
+
+      .nav_button {
+        width: 40%; // Увеличиваем ширину кнопок
+
+        .profile {
+          width: 25%; // Увеличиваем ширину профиля
+        }
+      }
+    }
+  }
+
+  main {
+    top: 7vh; // Уменьшаем отступ сверху
+
+    section {
+      width: 90%; // Увеличиваем ширину секции
+
+      .value {
+        height: 45%; // Увеличиваем высоту блока value
+
+        &__left {
+          width: 55%; // Увеличиваем ширину левой части
+        }
+
+        &__right {
+          width: 40%; // Уменьшаем ширину правой части
+        }
+      }
+
+      .history {
+        height: 50%; // Уменьшаем высоту блока истории
+
+        .operation {
+          .line {
+            p {
+              font-size: 1.8rem; // Уменьшаем размер шрифта
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 25vh; // Уменьшаем высоту футера
+
+    section {
+      width: 90%; // Увеличиваем ширину секции футера
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 25%; // Увеличиваем ширину блоков
+          }
+
+          .web {
+            width: 30%; // Увеличиваем ширину блока с иконками
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 6px; // Уменьшаем базовый размер шрифта
+  }
+
+  header {
+    height: 5vh; // Уменьшаем высоту хедера
+
+    nav {
+      .nav_button {
+        width: 50%; // Увеличиваем ширину кнопок
+        button{
+          display: none;
+        }
+
+        .profile {
+          width: 30%; // Увеличиваем ширину профиля
+        }
+      }
+    }
+  }
+
+  main {
+    top: 6vh; // Уменьшаем отступ сверху
+
+    section {
+      width: 95%; // Увеличиваем ширину секции
+
+      .value {
+        flex-direction: column; // Меняем направление на вертикальное
+        height: 50%; // Увеличиваем высоту блока value
+
+        &__left {
+          width: 100%; // Занимаем всю ширину
+          height: 60%; // Увеличиваем высоту левой части
+        }
+
+        &__right {
+          width: 100%; // Занимаем всю ширину
+          height: 35%; // Уменьшаем высоту правой части
+        }
+      }
+
+      .history {
+        height: 45%; // Уменьшаем высоту блока истории
+
+        .operation {
+          .line {
+            p {
+              font-size: 1.6rem; // Уменьшаем размер шрифта
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 20vh; // Уменьшаем высоту футера
+
+    section {
+      width: 95%; // Увеличиваем ширину секции футера
+
+      div {
+        &:first-child {
+          h2{
+            font-size: 2rem;
+          }
+          .s_5_block {
+            width: 30%; // Увеличиваем ширину блоков
+          }
+
+          .web {
+            width: 35%; // Увеличиваем ширину блока с иконками
+
+            .list img {
+              width: 25%; // Уменьшаем размер иконок
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  html {
+    font-size: 5px; // Уменьшаем базовый размер шрифта
+  }
+
+  header {
+    height: 5vh; // Уменьшаем высоту хедера
+
+    nav {
+      .nav_button {
+        width: 60%; // Увеличиваем ширину кнопок
+
+        .profile {
+          width: 35%; // Увеличиваем ширину профиля
+        }
+      }
+    }
+  }
+
+  main {
+    top: 6vh; // Уменьшаем отступ сверху
+
+    section {
+      width: 95%; // Увеличиваем ширину секции
+
+      .value {
+        height: 55%; // Увеличиваем высоту блока value
+
+        &__left {
+          width: 100%; // Занимаем всю ширину
+          height: 65%; // Увеличиваем высоту левой части
+        }
+
+        &__right {
+          width: 100%; // Занимаем всю ширину
+          height: 30%; // Уменьшаем высоту правой части
+        }
+      }
+
+      .history {
+        height: 40%; // Уменьшаем высоту блока истории
+
+        .operation {
+          .line {
+            p {
+              font-size: 1.4rem; // Уменьшаем размер шрифта
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 18vh; // Уменьшаем высоту футера
+
+    section {
+      width: 95%; // Увеличиваем ширину секции футера
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 35%; // Увеличиваем ширину блоков
+          }
+
+          .web {
+            width: 40%;
+
+            .list img {
+              width: 25%; // Уменьшаем размер иконок
+            }
+          }
+        }
+      }
+    }
+  }
+}
