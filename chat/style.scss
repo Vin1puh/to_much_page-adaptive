@@ -1,0 +1,774 @@
+@import
+'../mixins.scss';
+*{
+  @include mp_0;
+}
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+}
+a{
+  @include black_classic_a;
+  font-size: 2rem;
+}
+h2{
+  font:{
+    size: 2.8rem;
+    weight: 500;
+  }
+}
+p{
+  color: gray;
+  letter-spacing: 0.08rem;
+  font:{
+    size: 1.8rem;
+    weight: 300;
+  }
+}
+.green_span{
+  font-size: 2rem;
+  color: green;
+}
+.section_1_active{
+  border: 1px solid green;
+  color: green;
+}
+button{
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.display_none{
+  visibility: hidden;
+}
+.standart_button{
+  width: 100%;
+  height: 15%;
+  border: 1px solid green;
+  color: green;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: green;
+    color: white;
+  }
+}
+header{
+  @include fixed;
+  background: white;
+  width: 100vw;
+  height: 8vh;
+  @include flex-center;
+
+  nav{
+    width: 70%;
+    height: 100%;
+    @include flex-between;
+
+    img{
+      cursor: pointer;
+    }
+    .nav_menu{
+      width: 40%;
+      height: 100%;
+      @include flex-between;
+    }
+    .nav_button{
+      width: 30%;
+      height: 100%;
+      @include flex-between;
+
+      button{
+        border: none;
+        @include flex-center;
+        background: transparent;
+      }
+      .profile{
+        width: 17%;
+      }
+    }
+  }
+}
+main{
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 90vh;
+  @include flex-between-column;
+
+  .section_1{
+    width: 70%;
+    height: 95%;
+    @include flex-between;
+
+    .people{
+      width: 30%;
+      height: 100%;
+      @include flex-between-column;
+
+      input{
+        border: none;
+        width: 100%;
+        height: 5%;
+        font-size: 2.2rem;
+        border-radius: 2rem;
+        background: rgba(218, 222, 255, 1);
+
+        &::placeholder{
+          position: relative;
+          left: 5%;
+        }
+      }
+      &__list{
+        width: 100%;
+        height: 90%;
+        @include grid(1, 6, 1%);
+
+        .profile{
+          width: 100%;
+          height: 100%;
+          @include flex-around;
+          border-radius: 3rem;
+
+          img{
+            width: 20%;
+          }
+          &__text{
+            width: 50%;
+            height: 80%;
+            @include flex-around-column;
+            align-items: start;
+          }
+        }
+      }
+    }
+    .chat{
+      width: 70%;
+      height: 90%;
+      @include flex-between-column;
+      @include b_border;
+      border-radius: 2rem;
+
+      &__profile{
+        width: 100%;
+        height: 13%;
+        @include flex-around;
+        border-bottom: 1px solid #e1e1e1;
+
+        img{
+          width: 8%;
+        }
+        .name{
+          width: 80%;
+          height: 80%;
+          @include flex-around-column;
+          align-items: start;
+        }
+      }
+      &__block{
+        width: 100%;
+        height: 79%;
+        @include flex-between-column;
+
+        .your_text{
+          width: 90%;
+          height: 8%;
+          @include flex-center;
+          justify-content: end;
+
+          p{
+            width: 60%;
+            height: 80%;
+            font-size: 2rem;
+            color: black;
+          }
+          .block_4{
+            border-radius: 2rem;
+            @include flex-center;
+            width: 5%;
+            height: 55%;
+            background-color: lightgreen;
+          }
+        }
+        .enemy_photo{
+          width: 90%;
+          height: 15%;
+          @include flex-center;
+          justify-content: start;
+
+          .block_3{
+            @include grid(4, 1, 2%);
+            width: 50%;
+            height: 100%;
+
+            img{
+              width: 100%;
+              height: 100%;
+              border-radius: 2rem;
+            }
+          }
+        }
+        .enemy_text{
+          width: 90%;
+          height: 8%;
+          @include flex-center;
+          justify-content: start;
+
+          p{
+            color: black;
+            width: 90%;
+            height: 80%;
+            font-size: 2rem;
+          }
+          .block_1{
+            border-radius: 2rem;
+            @include flex-center;
+            width: 34%;
+            height: 100%;
+            background-color: #FFEDDD;
+          }
+          .block_2{
+            border-radius: 2rem;
+            @include flex-center;
+            width: 15%;
+            height: 55%;
+            background-color: #FFEDDD;
+          }
+        }
+      }
+      &__send{
+        width: 100%;
+        height: 8%;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        @include b_border;
+        @include flex-around;
+        background: rgba(222, 222, 222, 1);
+
+        img{
+          cursor: pointer;
+          width: 5%;
+        }
+        input{
+          border: none;
+          width: 60%;
+          height: 80%;
+          font-size: 2.2rem;
+          border-radius: 2rem;
+          background: rgba(218, 222, 255, 1);
+
+          &::placeholder{
+            position: relative;
+            left: 5%;
+          }
+        }
+        .standart_button{
+          height: 80%;
+          width: 20%;
+        }
+      }
+    }
+  }
+}
+footer{
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  height: 35vh;
+  @include flex-center;
+
+  section{
+    width: 70%;
+    height: 90%;
+    @include flex-between-column;
+
+    div{
+      &:first-child{
+        width: 100%;
+        height: 60%;
+        @include flex-between;
+        align-items: start;
+
+        h2{
+          font-size: 3.5rem;
+        }
+        .s_5_block{
+          width: 15%;
+          height: 100%;
+          @include flex-between-column;
+          justify-content: start;
+          align-items: start;
+
+          p{
+            cursor: pointer;
+            line-height: 200%;
+
+            &:first-child{
+              line-height: 300%;
+            }
+          }
+        }
+        .web{
+          width: 20%;
+          height: 60%;
+          @include flex-between-column;
+          align-items: start;
+
+          .list{
+            width: 100%;
+            height: 50%;
+            @include flex-between;
+
+            img{
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover{
+                mask-image: linear-gradient(rgba(0, 128, 0, 1), rgba(0, 128, 0, 1));
+              }
+            }
+          }
+        }
+      }
+      &:last-child{
+        width: 60%;
+        height: 20%;
+        @include flex-center;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 7px;
+  }
+
+  header {
+    height: 6vh;
+
+    img{
+      width: 80%;
+    }
+    nav {
+      width: 70%;
+
+      .nav_menu {
+        width: 50%;
+      }
+
+      .nav_button {
+        width: 40%;
+
+        button img {
+          width: 80%; // Уменьшение размера иконок в навигации
+        }
+
+        .profile {
+          width: 20%;
+
+          img {
+            width: 80%; // Уменьшение размера фото профиля
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    top: 8vh;
+    height: 80vh;
+
+    .section_1 {
+      width: 80%;
+      height: 90%;
+
+      .people {
+        width: 35%;
+
+        input {
+          font-size: 1.8rem;
+        }
+
+        &__list {
+          .profile {
+            img {
+              width: 25%;
+            }
+
+            &__text {
+              width: 60%;
+            }
+          }
+        }
+      }
+
+      .chat {
+        width: 65%;
+
+        &__profile {
+          img {
+            width: 10%;
+          }
+        }
+
+        &__block {
+          .your_text { // Корректировка высоты блока с текстом
+            .block_4 {
+              width: 8%;
+            }
+          }
+
+          .enemy_photo {// Корректировка высоты блока с фото
+            .block_3 {
+              width: 60%;
+            }
+          }
+
+          .enemy_text {
+            height: 10%; // Корректировка высоты блока с текстом
+            .block_1 {
+              width: 40%;
+              height: 80%; // Корректировка высоты блока
+            }
+
+            .block_2 {
+              width: 20%;
+              height: 80%; // Корректировка высоты блока
+            }
+          }
+        }
+
+        &__send {
+          input {
+            font-size: 1.8rem;
+          }
+
+          .standart_button {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 30vh;
+
+    section {
+      width: 90%;
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 20%;
+          }
+
+          .web {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header {
+    height: 5vh;
+
+    nav {
+      width: 90%;
+      .nav_menu {
+        display: none;
+      }
+
+      .nav_button {
+        width: 30%;
+
+        button {
+          display: none;
+        }
+
+        .profile {
+          width: 25%;
+
+          img {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    top: 6vh;
+    height: 85vh;
+
+    .section_1 {
+      width: 90%;
+      height: 95%;
+
+      .people {
+        width: 30%;
+
+        input {
+          font-size: 1.6rem;
+        }
+
+        &__list {
+          .profile {
+            img {
+              width: 30%;
+            }
+
+            &__text {
+              width: 65%;
+            }
+          }
+        }
+      }
+
+      .chat {
+        width: 70%;
+
+        &__profile {
+          img {
+            width: 12%;
+          }
+        }
+
+        &__block {
+          .your_text {
+            .block_4 {
+              width: 10%;
+            }
+          }
+
+          .enemy_photo {
+            .block_3 {
+              width: 70%;
+            }
+          }
+
+          .enemy_text {
+            height: 12%; // Корректировка высоты блока с текстом
+            .block_1 {
+              width: 50%;
+              height: 80%; // Корректировка высоты блока
+            }
+
+            .block_2 {
+              width: 25%;
+              height: 80%; // Корректировка высоты блока
+            }
+          }
+        }
+
+        &__send {
+          input {
+            font-size: 1.6rem;
+          }
+
+          .standart_button {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 25vh;
+
+    section {
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 25%;
+          }
+
+          .web {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  header {
+    height: 4vh;
+
+    nav {
+      width: 90%;
+
+      .nav_button {
+        width: 60%;
+
+        .profile {
+          width: 30%;
+
+          img {
+            width: 80%; // Уменьшение размера фото профиля
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    top: 5vh;
+    height: 90vh;
+
+    .section_1 {
+      width: 95%;
+      height: 95%;
+
+      .people {
+        display: none;
+        width: 45%;
+
+        input {
+          font-size: 1.4rem;
+        }
+
+        &__list {
+          .profile {
+            img {
+              width: 35%;
+            }
+
+            &__text {
+              width: 70%;
+            }
+          }
+        }
+      }
+
+      .chat {
+        width: 100%;
+
+        &__profile {
+          img {
+            width: 15%;
+          }
+        }
+
+        &__block {
+          .your_text {
+            .block_4 {
+              width: 12%;
+            }
+          }
+
+          .enemy_photo {
+            .block_3 {
+              width: 80%;
+            }
+          }
+
+          .enemy_text {
+            height: 10%; // Корректировка высоты блока с текстом
+            .block_1 {
+              width: 60%;
+              height: 80%; // Корректировка высоты блока
+            }
+
+            .block_2 {
+              width: 30%;
+              height: 80%; // Корректировка высоты блока
+            }
+          }
+        }
+
+        &__send {
+          height: 5%;
+          img{
+            width: 8%;
+          }
+          input {
+            font-size: 1.4rem;
+          }
+
+          .standart_button {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 20vh;
+
+    section {
+      div {
+        &:first-child {
+
+          h2{
+            font-size: 1.8rem;
+          }
+          .s_5_block {
+            width: 30%;
+
+            p {
+              font-size: 1.4rem;
+            }
+          }
+
+          .web {
+            width: 35%;
+          }
+        }
+
+        &:last-child {
+          img{
+            width: 25%;
+          }
+          p {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  header {
+
+    nav {
+
+      .nav_button {
+        width: 60%;
+
+        .profile {
+          width: 25%;
+        }
+      }
+    }
+  }
+
+  main {
+    top: 5vh;
+    height: 90vh;
+
+    .section_1 {
+      width: 95%;
+      height: 95%;
+
+      .chat {
+
+        &__block {
+
+          .enemy_photo {
+            .block_3 {
+              width: 80%;
+              height: 68%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

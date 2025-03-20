@@ -1,0 +1,880 @@
+@import
+        '../mixins.scss';
+*{
+  @include mp_0;
+}
+html{
+  font-size: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+a{
+  @include black_classic_a;
+  font-size: 2rem;
+}
+h2{
+  font:{
+    size: 2.8rem;
+    weight: 500;
+  }
+}
+p{
+  color: gray;
+  letter-spacing: 0.08rem;
+  font:{
+    size: 1.8rem;
+    weight: 300;
+  }
+}
+button{
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+.display_none{
+  visibility: hidden;
+}
+.standart_button{
+  width: 100%;
+  height: 15%;
+  border: 1px solid green;
+  color: green;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4rem;
+  transition: all .2s;
+  font-size: 2rem;
+
+  &:hover{
+    background-color: green;
+    color: white;
+  }
+}
+header{
+  @include fixed;
+  background: white;
+  width: 100vw;
+  height: 8vh;
+  @include flex-center;
+
+  nav{
+    width: 70%;
+    height: 100%;
+    @include flex-between;
+
+    img{
+      cursor: pointer;
+    }
+    .nav_menu{
+      width: 40%;
+      height: 100%;
+      @include flex-between;
+    }
+    .nav_button{
+      width: 30%;
+      height: 100%;
+      @include flex-between;
+
+      button{
+        border: none;
+        @include flex-center;
+        background: transparent;
+      }
+      .profile{
+        width: 17%;
+      }
+    }
+  }
+}
+main{
+  position: relative;
+  top: 10vh;
+  width: 100vw;
+  height: 360vh;
+  @include flex-between-column;
+
+  .section_1{
+    width: 70%;
+    height: 80vh;
+    @include flex-evenly;
+    flex-direction: column;
+
+    .search{
+      width: 50%;
+      height: 20%;
+      @include flex-between;
+
+      input{
+        width: 100%;
+        height: 35%;
+        border: 1px solid #e1e1e1;
+        font-size: 2rem;
+        border-bottom-left-radius: 4rem;
+        border-top-left-radius: 4rem;
+
+        &::placeholder{
+          position: relative;
+          left: 5%;
+        }
+      }
+      button{
+        width: 30%;
+        height: 35%;
+        border: none;
+        color: white;
+        background-color: orange;
+        border-bottom-right-radius: 4rem;
+        border-top-right-radius: 4rem;
+      }
+    }
+    span{
+      color: green;
+    }
+    h1{
+      letter-spacing: 0.05rem;
+      width: 54%;
+      text-align: center;
+      font:{
+        size: 4rem;
+        weight: 700;
+      }
+    }
+    .janr{
+      width: 100%;
+      height: 15%;
+      @include flex-between-column;
+
+      div{
+        width: 50%;
+        height: 45%;
+        @include flex-between;
+
+        &:last-child{
+          width: 60%;
+        }
+      }
+      .s_1_active{
+        border: 1px solid green;
+        color: rgb(0, 128, 0);
+      }
+      p{
+        width: 24%;
+        height: 70%;
+        border-radius: 4rem;
+        border: 1px solid #e1e1e1;
+        cursor: pointer;
+        color: rgb(90, 90, 90);
+        text-align: center;
+        vertical-align: middle;
+        @include flex-center;
+
+        &:hover{
+          border: 1px solid green;
+          color: green;
+        }
+      }
+      button{
+        width: 24%;
+        height: 74%;
+        border: 1px solid orange;
+        color: orange;
+        background: rgba(0, 0, 0, 0);
+        border-radius: 4rem;
+      }
+    }
+  }
+  .section_2{
+    width: 70%;
+    height: 280vh;
+    @include flex-between-column;
+
+    div{
+      width: 100%;
+      height: 9%;
+      @include flex-around-column;
+
+      div{
+        &:first-child{
+          width: 100%;
+          height: 20%;
+          @include flex-between;
+
+          span{
+            font:{
+              size: 2.8rem;
+              weight: 600;
+            }
+            color: green;
+          }
+        }
+        &:last-child{
+          width: 100%;
+          height: 70%;
+          @include flex-between;
+
+          div{
+            &:first-child {
+              width: 40%;
+              height: 100%;
+              @include flex-between;
+
+              img{
+                width: 30%;
+              }
+              div {
+                width: 65%;
+                height: 100%;
+                @include flex-evenly-column;
+                align-items: start;
+
+                h3{
+                  font:{
+                    size: 2rem;
+                    weight: 500;
+                  }
+                }
+                div{
+                  width: 50%;
+                  height: 20%;
+                  @include flex-between;
+
+                  img{
+                    cursor: pointer;
+                    width: 12%;
+                  }
+                }
+              }
+            }
+            &:last-child{
+              width: 30%;
+              height: 100%;
+              @include flex-around-column;
+              align-items: end;
+            }
+          }
+        }
+      }
+      &:first-child{
+        width: 100%;
+        height: 3%;
+        @include flex-between;
+        flex-direction: row;
+
+        h1{
+          font:{
+            size: 3.4rem;
+            weight: 500;
+          }
+        }
+        div{
+          width: 40%;
+          height: 100%;
+          @include flex-between;
+          flex-direction: row;
+
+          h2{
+            font-size: 2rem;
+          }
+          input{
+            width: 28%;
+            height: 35%;
+            border: none;
+            font-size: 2rem;
+            border-radius: 4rem;
+
+            &::placeholder{
+              position: relative;
+              left: 5%;
+            }
+          }
+        }
+      }
+      &:last-child{
+        width: 100%;
+        height: 3%;
+        @include flex-center;
+
+        button{
+          width: 20%;
+          height: 60%;
+          border: 1px solid green;
+          color: green;
+          border-radius: 4rem;
+          background: rgba(0, 0, 0, 0);
+
+          &:hover{
+            background-color: green;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+footer{
+  position: relative;
+  top: 10vh;
+  width: 100%;
+  height: 35vh;
+  @include flex-center;
+
+  section{
+    width: 70%;
+    height: 90%;
+    @include flex-between-column;
+
+    div{
+      &:first-child{
+        width: 100%;
+        height: 60%;
+        @include flex-between;
+        align-items: start;
+
+        h2{
+          font-size: 3.5rem;
+        }
+        .s_5_block{
+          width: 15%;
+          height: 100%;
+          @include flex-between-column;
+          justify-content: start;
+          align-items: start;
+
+          p{
+            cursor: pointer;
+            line-height: 200%;
+
+            &:first-child{
+              line-height: 300%;
+            }
+          }
+        }
+        .web{
+          width: 20%;
+          height: 60%;
+          @include flex-between-column;
+          align-items: start;
+
+          .list{
+            width: 100%;
+            height: 50%;
+            @include flex-between;
+
+            img{
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover{
+                mask-image: linear-gradient(rgba(0, 128, 0, 1), rgba(0, 128, 0, 1));
+              }
+            }
+          }
+        }
+      }
+      &:last-child{
+        width: 60%;
+        height: 20%;
+        @include flex-center;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 7px;
+  }
+
+  header {
+    height: 6vh;
+
+    img{
+      width: 80%;
+    }
+    nav {
+      width: 70%;
+
+      .nav_menu {
+        width: 50%;
+      }
+
+      .nav_button {
+        width: 40%;
+
+        .profile {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  main {
+    top: 8vh;
+    height: 200vh;
+
+    .section_1 {
+      height: 70vh;
+
+      h1 {
+        font-size: 3.2rem;
+        width: 70%;
+      }
+
+      .search {
+        width: 70%;
+      }
+
+      .janr {
+        div {
+          width: 60%;
+
+          &:last-child {
+            width: 70%;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      height: 240vh;
+
+      div {
+        height: 8%;
+
+        &:first-child {
+          height: 4%;
+
+          h1 {
+            font-size: 2.8rem;
+          }
+
+          div {
+            width: 50%;
+
+            h2 {
+              font-size: 1.8rem;
+            }
+
+            input {
+              width: 30%;
+            }
+          }
+        }
+
+        &:last-child {
+          height: 4%;
+
+          button {
+            width: 25%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 30vh;
+
+
+    section {
+      width: 90%;
+
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 20%;
+          }
+
+          .web {
+            width: 25%;
+
+            img{
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header {
+    height: 5vh;
+
+    img{
+      width: 70%;
+    }
+    nav {
+      .nav_menu {
+        display: none;
+      }
+
+      .nav_button {
+        width: 35%;
+
+        button {
+          display: none;
+        }
+
+        .profile {
+          width: 27%;
+        }
+      }
+    }
+  }
+
+  main {
+    top: 6vh;
+
+    .section_1 {
+      height: 60vh;
+
+      h1 {
+        font-size: 2.8rem;
+        width: 80%;
+      }
+
+      .search {
+        width: 80%;
+      }
+
+      .janr {
+        div {
+          width: 80%;
+
+          &:last-child {
+            width: 90%;
+          }
+
+          p {
+            width: 30%;
+          }
+
+          button {
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      height: 200vh;
+
+      div {
+        height: 7%;
+
+        &:first-child {
+          height: 5%;
+
+          h1 {
+            font-size: 2.4rem;
+          }
+
+          div {
+            width: 60%;
+
+            h2 {
+              font-size: 1.6rem;
+            }
+
+            input {
+              width: 35%;
+            }
+          }
+        }
+
+        &:last-child {
+          height: 5%;
+
+          button {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 25vh;
+
+    section {
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 25%;
+          }
+
+          .web {
+            width: 30%;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  header {
+    height: 4vh;
+
+    nav {
+      width: 90%;
+      .nav_button {
+        width: 60%;
+
+        .profile {
+          width: 30%;
+        }
+      }
+    }
+  }
+
+  main {
+    top: 5vh;
+
+    .section_1 {
+      width: 90%;
+      height: 50vh;
+
+      h1 {
+        font-size: 2.4rem;
+        width: 90%;
+      }
+
+      .search {
+        width: 90%;
+
+        input {
+          height: 40%;
+        }
+
+        button {
+          height: 40%;
+        }
+      }
+
+      .janr {
+        div {
+          width: 90%;
+
+          &:last-child {
+            width: 100%;
+          }
+
+          p {
+            width: 40%;
+            font-size: 1.6rem;
+          }
+
+          button {
+            width: 40%;
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+
+    .section_2 {
+      width: 90%;
+      height: 180vh;
+
+      div {
+        height: 6%;
+
+        div:last-child div:first-child div h3:nth-child(2) {
+          display: none;
+        }
+        &:first-child {
+          height: 6%;
+
+          h1 {
+            font-size: 2rem;
+          }
+
+          div {
+            width: 70%;
+
+            h2 {
+              font-size: 1.2rem;
+            }
+
+            input {
+              width: 40%;
+            }
+          }
+        }
+
+        &:last-child {
+          height: 6%;
+
+          button {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 20vh;
+
+
+    section {
+      div {
+        &:first-child {
+          h2{
+            font-size: 2rem;
+          }
+          .s_5_block {
+            width: 30%;
+
+            p {
+              font-size: 1.4rem;
+            }
+          }
+
+          .web {
+            width: 35%;
+          }
+        }
+
+        &:last-child {
+          p {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  header {
+    height: 4vh;
+
+    nav {
+      width: 90%;
+      .nav_button {
+        width: 70%;
+
+        .profile {
+          width: 35%;
+        }
+      }
+    }
+  }
+
+  main {
+    top: 5vh;
+
+    .section_1 {
+      width: 90%;
+      height: 45vh;
+
+      h1 {
+        font-size: 2.2rem;
+        width: 95%;
+      }
+
+      .search {
+        width: 95%;
+
+        input {
+          height: 45%;
+        }
+
+        button {
+          height: 45%;
+        }
+      }
+
+      .janr {
+        div {
+          width: 95%;
+
+          &:last-child {
+            width: 100%;
+          }
+
+          p {
+            width: 45%;
+            font-size: 1.4rem;
+          }
+
+          button {
+            width: 45%;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+    .section_2 {
+      width: 90%;
+      height: 160vh;
+
+      div {
+        height: 5%;
+
+        div:last-child div:first-child div h3:nth-child(2) {
+          display: none;
+        }
+        &:first-child {
+          height: 6%;
+
+          span{
+            display: none;
+          }
+          h1 {
+            font-size: 1.8rem;
+          }
+
+          div {
+            width: 80%;
+
+            h2 {
+              font-size: 1.2rem;
+            }
+
+            input {
+              width: 45%;
+            }
+          }
+        }
+
+        &:last-child {
+          height: 6%;
+
+          button {
+            width: 45%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    height: 18vh;
+
+    section {
+      div {
+        &:first-child {
+          .s_5_block {
+            width: 35%;
+
+            p {
+              font-size: 1.2rem;
+            }
+          }
+
+          .web {
+            width: 40%;
+          }
+        }
+
+        &:last-child {
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
